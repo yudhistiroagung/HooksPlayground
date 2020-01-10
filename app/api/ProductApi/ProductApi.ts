@@ -2,7 +2,7 @@ import { IProductApi } from './IProductApi';
 import { Product } from 'app/models';
 
 // fake api for product
-class ProductApi implements IProductApi {
+export class ProductApi implements IProductApi {
 
     private products: Product[] = [];
 
