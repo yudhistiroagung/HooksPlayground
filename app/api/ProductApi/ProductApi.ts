@@ -10,7 +10,7 @@ export class ProductApi implements IProductApi {
         return this.products;
     }
 
-    public async addProduct(payload: Omit<Product, 'id'> ): Promise<Product> {
+    public async addProduct(payload: Omit<Product, 'id'>): Promise<Product> {
         const id: string = Date.now().toString();
         const product: Product = {
             id,
