@@ -19,7 +19,7 @@ declare var global: {HermesInternal: null | {}};
 
 const App = () => {
   return (
-    <SafeAreaView style={{ width: '100%', height: '100%'}}>
+    <SafeAreaView style={{width: '100%', height: '100%'}}>
       <Home />
     </SafeAreaView>
   );

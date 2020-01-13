@@ -10,7 +10,9 @@ import {useProducts} from '../../hooks';
 export const Home = () => {
   const {loading, products, fetchAll} = useProducts();
 
-  useEffect(fetchAll, []);
+  useEffect(() => {
+    fetchAll();
+  }, []);
 
   const _renderContent = () => {
     return loading ? (

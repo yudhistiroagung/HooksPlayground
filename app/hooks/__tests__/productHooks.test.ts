@@ -3,7 +3,7 @@ import {Product} from '../../models';
 
 import {renderHook, cleanup, act} from '@testing-library/react-hooks';
 
-import {useProducts} from '../ProductHooks';
+import {useProducts} from '../UseProducts';
 
 const mockProducts: Product[] = [
   {

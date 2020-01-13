@@ -1,1 +1,1 @@
-export * from './ProductHooks';
+export * from './UseProducts';
