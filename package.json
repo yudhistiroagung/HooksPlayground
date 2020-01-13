@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "push": "git add .; git commit -m 'commiting changes'; git push origin master;",
-    "test-hooks": "yarn jest app/hooks/"
+    "test-hooks": "yarn jest app/hooks/ --coverage"
   },
   "dependencies": {
     "@testing-library/react-hooks": "^3.2.1",
