@@ -33,10 +33,12 @@ export class ProductApi implements IProductApi {
       ...payload,
     };
     this.products.push(product);
+    await delay(500);
     return product;
   }
 
   public async updateProduct(product: Product): Promise<Product> {
+    await delay(500);
     const idx: number = this.findIndex(product.id);
     if (idx < 0) {
       throw new Error('Product not found');
@@ -46,6 +48,7 @@ export class ProductApi implements IProductApi {
   }
 
   public async deleteProduct(id: string): Promise<void> {
+    await delay(500);
     const idx: number = this.findIndex(id);
     if (idx < 0) {
       throw new Error('Product not found');
