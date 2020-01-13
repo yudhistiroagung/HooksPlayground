@@ -2,7 +2,7 @@ import {IProductApi} from './IProductApi';
 import {Product} from '../../models';
 import {delay} from '../../utils/PromiseUtils';
 
-const initialDUmmyData: Product[] = [
+const initialDummyData: Product[] = [
   {
     id: '123',
     name: 'Nasi Goreng',
@@ -19,7 +19,7 @@ const initialDUmmyData: Product[] = [
 
 // fake api for product
 export class ProductApi implements IProductApi {
-  private products: Product[] = [...initialDUmmyData];
+  private products: Product[] = [...initialDummyData];
 
   public async getProducts(): Promise<Product[]> {
     await delay(1000);
