@@ -8,45 +8,21 @@
  * @format
  */
 
-import React, {useEffect, useState} from 'react';
-import {Button, SafeAreaView, View, StatusBar} from 'react-native';
+import React from 'react';
+import {SafeAreaView} from 'react-native';
+
+import 'react-native-gesture-handler';
+
+import {Home} from './containers';
 
 declare var global: {HermesInternal: null | {}};
 
 const App = () => {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    console.log('didMount');
-    return () => {
-      console.log('willUnMount');
-    };
-  });
-
-  const changeVisibility = () => {
-    setVisible(!visible);
-  };
-
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <Button title="cek" onPress={changeVisibility} />
-        {visible && <MiniComponent />}
-      </SafeAreaView>
-    </>
+    <SafeAreaView style={{ width: '100%', height: '100%'}}>
+      <Home />
+    </SafeAreaView>
   );
-};
-
-const MiniComponent = () => {
-  useEffect(() => {
-    console.log('mini mounted');
-    return () => {
-      console.log('mini will unmounted');
-    };
-  });
-
-  return <View style={{height: 20, width: 20, backgroundColor: 'green'}} />;
 };
 
 export default App;
