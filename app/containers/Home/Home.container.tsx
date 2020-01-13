@@ -1,32 +1,36 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
-import {View} from 'react-native';
+import {View, ActivityIndicator} from 'react-native';
 
 import style from './Home.style';
 import {Product} from '../../models';
 import {ProductList} from '../../components';
 
-const dummyProducts: Product[] = [
-  {
-    id: '123',
-    name: 'Nasi Goreng',
-    unitCost: 7000,
-    price: 12000,
-  },
-  {
-    id: '124',
-    name: 'Ayam Goreng',
-    unitCost: 8000,
-    price: 13000,
-  },
-];
+import ProductApi from '../../api/ProductApi';
 
 export const Home = () => {
-  const [products, setProducts] = useState<Product[]>(dummyProducts);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
-  return (
-    <View style={style.container}>
+  useEffect(() => {
+    const getProducts = async () => {
+      setLoading(true);
+      const res = await ProductApi.getProducts();
+      setProducts([...res]);
+      setLoading(false);
+    };
+    getProducts();
+  }, []);
+
+  console.log('loading', loading);
+
+  const _renderContent = () => {
+    return loading ? (
+      <ActivityIndicator size="small" color="green" />
+    ) : (
       <ProductList products={products} />
-    </View>
-  );
+    );
+  };
+
+  return <View style={style.container}>{_renderContent()}</View>;
 };
