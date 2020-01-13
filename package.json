@@ -8,9 +8,11 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "push": "git add .; git commit -m 'commiting changes'; git push origin master;"
+    "push": "git add .; git commit -m 'commiting changes'; git push origin master;",
+    "test-hooks": "yarn jest app/hooks/"
   },
   "dependencies": {
+    "@testing-library/react-hooks": "^3.2.1",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-gesture-handler": "^1.5.3",

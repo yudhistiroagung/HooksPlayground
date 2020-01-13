@@ -7,10 +7,10 @@ interface UseProductsHooks {
   loading: boolean;
   products: Product[];
   error?: string;
-  fetchAll: () => void;
-  add: (product: Omit<Product, 'id'>) => void;
-  update: (product: Product) => void;
-  remove: (id: string) => void;
+  fetchAll: () => Promise<void>;
+  add: (product: Omit<Product, 'id'>) => Promise<void>;
+  update: (product: Product) => Promise<void>;
+  remove: (id: string) => Promise<void>;
 }
 
 export const useProducts = (): UseProductsHooks => {
