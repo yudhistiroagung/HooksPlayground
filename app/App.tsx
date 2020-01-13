@@ -9,7 +9,7 @@
  */
 
 import React from 'react';
-import {SafeAreaView} from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
 
 import 'react-native-gesture-handler';
 
@@ -19,10 +19,17 @@ declare var global: {HermesInternal: null | {}};
 
 const App = () => {
   return (
-    <SafeAreaView style={{width: '100%', height: '100%'}}>
+    <SafeAreaView style={style.container}>
       <Home />
     </SafeAreaView>
   );
 };
+
+const style = StyleSheet.create({
+  container: {
+    width: '100%',
+    height: '100%',
+  },
+});
 
 export default App;
