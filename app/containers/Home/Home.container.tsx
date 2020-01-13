@@ -1,28 +1,16 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 
 import {View, ActivityIndicator} from 'react-native';
 
 import style from './Home.style';
-import {Product} from '../../models';
 import {ProductList} from '../../components';
 
-import ProductApi from '../../api/ProductApi';
+import {useProducts} from '../../hooks';
 
 export const Home = () => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const {loading, products, fetchAll} = useProducts();
 
-  useEffect(() => {
-    const getProducts = async () => {
-      setLoading(true);
-      const res = await ProductApi.getProducts();
-      setProducts([...res]);
-      setLoading(false);
-    };
-    getProducts();
-  }, []);
-
-  console.log('loading', loading);
+  useEffect(fetchAll, []);
 
   const _renderContent = () => {
     return loading ? (
