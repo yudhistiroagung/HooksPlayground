@@ -9,13 +9,13 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 
 import 'react-native-gesture-handler';
 
-import {Home} from './containers';
+import { Home } from './containers';
 
-declare var global: {HermesInternal: null | {}};
+declare var global: { HermesInternal: null | {} };
 
 const App = () => {
   return (

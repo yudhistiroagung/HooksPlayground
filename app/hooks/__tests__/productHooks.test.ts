@@ -1,9 +1,9 @@
-import {IProductApi} from '../../api/ProductApi/IProductApi';
-import {Product} from '../../models';
+import { IProductApi } from '../../api/ProductApi/IProductApi';
+import { Product } from '../../models';
 
-import {renderHook, cleanup, act} from '@testing-library/react-hooks';
+import { renderHook, cleanup, act } from '@testing-library/react-hooks';
 
-import {useProducts} from '../UseProducts';
+import { useProducts } from '../UseProducts';
 
 const mockProducts: Product[] = [
   {
@@ -29,7 +29,7 @@ afterEach(() => cleanup());
 
 describe('useProduct', () => {
   it('fetchAll', async () => {
-    const {result} = renderHook(() => useProducts());
+    const { result } = renderHook(() => useProducts());
     expect(result.current.products.length).toBe(0);
     expect(result.current.loading).toBe(false);
     await act(async () => {

@@ -1,7 +1,7 @@
-import {useState} from 'react';
-import {Product} from '../models';
+import { useState } from 'react';
+import { Product } from '../models';
 
-import {ProductApi} from '../api';
+import { ProductApi } from '../api';
 
 interface UseProductsHooks {
   loading: boolean;
@@ -34,7 +34,7 @@ export const useProducts = (): UseProductsHooks => {
     setLoading(true);
     try {
       await ProductApi.updateProduct(product);
-    } catch (e) {}
+    } catch (e) { }
     fetchAll();
     setLoading(false);
   };
@@ -43,7 +43,7 @@ export const useProducts = (): UseProductsHooks => {
     setLoading(true);
     try {
       await ProductApi.deleteProduct(id);
-    } catch (e) {}
+    } catch (e) { }
     fetchAll();
   };
 

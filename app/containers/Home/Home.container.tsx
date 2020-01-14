@@ -1,14 +1,14 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 
-import {View, ActivityIndicator} from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 
 import style from './Home.style';
-import {ProductList} from '../../components';
+import { ProductList } from '../../components';
 
-import {useProducts} from '../../hooks';
+import { useProducts } from '../../hooks';
 
 export const Home = () => {
-  const {loading, products, fetchAll} = useProducts();
+  const { loading, products, fetchAll } = useProducts();
 
   useEffect(() => {
     fetchAll();
