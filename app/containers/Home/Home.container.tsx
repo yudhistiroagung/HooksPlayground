@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { View, ActivityIndicator } from 'react-native';
 
 import style from './Home.style';
-import { ProductList } from '../../components';
+import { ActionBar, ProductList } from '../../components';
 
 import { useProducts } from '../../hooks';
 
@@ -22,5 +22,10 @@ export const Home = () => {
     );
   };
 
-  return <View style={style.container}>{_renderContent()}</View>;
+  return (
+    <View style={style.container}>
+      <ActionBar />
+      {_renderContent()}
+    </View>
+  );
 };
